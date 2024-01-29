@@ -37,7 +37,7 @@ public class StudentController {
     }
 
     // Delete the student
-    @DeleteMapping("/student/{id}")
+    @DeleteMapping("/students/{id}")
     public List<Student> deleteStudent(@PathVariable Integer id) {
         studentRepository.delete(studentRepository.findById(id).get());
         return studentRepository.findAll();
@@ -51,7 +51,7 @@ public class StudentController {
     }
 
     // Update the student information
-    @PutMapping("/student/{id}")
+    @PutMapping("/students/{id}")
     public List<Student> updateStudent(@RequestBody Student student, @PathVariable Integer id) {
         Student studentObj = studentRepository.findById(id).get();
         studentObj.setName(student.getName());
